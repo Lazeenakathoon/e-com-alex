@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "uid": "user-1779206431301",
+      "displayName": "Lazina",
+      "email": "lazeenakahton@gmail.com",
+      "role": "seller",
+      "passwordHash": "eda99a411d32688b515af9bfd946b44838e3578f1321572725babb50cfb245c9de53df4d420075728691aa413b00f4263f443fe43ebbd12a2e94815186f47705",
+      "passwordSalt": "6cee3426dc19344453712565c157bfad"
+    }
+  ],
+  "products": [],
+  "carts": {
+    "user-1779206431301": [
+      {
+        "id": 13,
+        "name": "Cotton T-shirt",
+        "price": 899,
+        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80",
+        "quantity": 1
+      },
+      {
+        "id": "sandal-10",
+        "name": "Floral Accent Heel Sandals",
+        "category": "sandals",
+        "gender": "women",
+        "tags": [
+          "sandals",
+          "floral",
+          "heels",
+          "footwear"
+        ],
+        "price": 1799,
+        "size": "UK 4, 5, 6, 7",
+        "image": "https://images.pexels.com/photos/27046124/pexels-photo-27046124.jpeg?auto=compress&cs=tinysrgb&w=700",
+        "quantity": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "watch": ["server.js", "config", "global"],
+  "ignore": ["data/*", ".env*", "node_modules/*", "package-lock.json", "frontend/*"],
+  "ext": "js,json"
+}

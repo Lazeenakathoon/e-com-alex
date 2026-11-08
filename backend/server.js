@@ -2,7 +2,7 @@
 const cors = require('cors');
 const express = require('express');
 
-const { port, clientOrigin, enableMongo, geminiModel } = require('./config/env');
+const { port, clientOrigins, enableMongo, geminiModel } = require('./config/env');
 const { connectMongo, useMongo } = require('./config/mongo');
 const {
     hashPassword,
@@ -25,7 +25,7 @@ const {
 const app = express();
 
 app.use(cors({
-    origin: process.env.NODE_ENV === 'development' ? true : clientOrigin,
+    origin: clientOrigins,
     credentials: true,
 }));
 app.use(express.json({ limit: '8mb' }));

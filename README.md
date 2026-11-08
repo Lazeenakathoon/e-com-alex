@@ -124,7 +124,8 @@ Backend deployment values:
 
 Frontend deployment values:
 
-- `REACT_APP_API_URL`: your deployed backend API URL ending with `/api`, for example `https://stylehub-api.onrender.com/api`.
+- In the Vercel project settings, add `REACT_APP_API_URL` with your deployed backend API URL, for example `https://stylehub-api.onrender.com/api`. This frontend uses Create React App, so the variable is included at build time; redeploy after adding or changing it.
+- In the backend hosting settings, set `CLIENT_ORIGIN` to the exact deployed Vercel site origin (scheme and hostname, with no path). For multiple allowed frontend origins, separate them with commas.
 
 After deploying the backend, open:
 

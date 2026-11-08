@@ -1,6 +1,21 @@
-const defaultApiBaseUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const normalizeApiBaseUrl = (url) => {
+    const baseUrl = url.trim().replace(/\/+$/, '');
+    return /\/api$/i.test(baseUrl) ? baseUrl : `${baseUrl}/api`;
+};
 
-export const API_BASE_URL = defaultApiBaseUrl;
+const getDefaultApiBaseUrl = () => {
+    if (process.env.REACT_APP_API_URL) {
+        return normalizeApiBaseUrl(process.env.REACT_APP_API_URL);
+    }
+
+    if (process.env.NODE_ENV === 'development') {
+        return 'https://eduloanplus.onrender.com/api';
+    }
+
+    return '/api';
+};
+
+export const API_BASE_URL = getDefaultApiBaseUrl();
 
 export const AUTH_TOKEN_KEY = 'ecommerce_api_token';
 export const AUTH_USER_KEY = 'ecommerce_api_user';
@@ -44,7 +59,7 @@ export const apiRequest = async (path, options = {}) => {
             headers,
         });
     } catch {
-        throw new Error('Cannot reach the backend API. Please make sure the backend server is running on http://localhost:5000.');
+        throw new Error(`Cannot reach the backend API at ${API_BASE_URL}. Check REACT_APP_API_URL and the backend deployment.`);
     }
 
     const data = await response.json().catch(() => ({}));
